@@ -1,8 +1,8 @@
 package warmup;
 
 public class WarmUp2 {
-    public static boolean monkeyTrouble(boolean aMonkay, boolean bMonkey) {
-        return (aMonkay && bMonkey) || (!aMonkay && !bMonkey);
+    public static boolean monkeyTrouble(boolean aSmile, boolean bSmile) {
+        return (aSmile && bSmile) || (!aSmile && !bSmile);
     }
 }
 
