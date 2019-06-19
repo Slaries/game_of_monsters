@@ -5,9 +5,12 @@ public class Main {
         boolean result = WarmUp1.sleepIn (false, false);
         boolean monkay = WarmUp1.monkeyTrouble(true, true);
         int sumDouble = WarmUp1.sumDouble(2, 2);
-    System.out.println(result);
-    System.out.println("Question about monkey " + monkay);
-        System.out.println("Дабл сумм " + sumDouble);
+        boolean nearv = WarmUp1.nearHundred(89);
+        boolean parrot = WarmUp1.parrotTrouble(true,6);
+        boolean make10 = WarmUp1.makes10(8, 2);
+        int diff = WarmUp1.diff21(22);
+        System.out.println(nearv);
+
     }
 }
-// chanches take in WarmUp1
+//
