@@ -9,7 +9,7 @@ public class Main {
         boolean parrot = WarmUp1.parrotTrouble(true,6);
         boolean make10 = WarmUp1.makes10(8, 2);
         int diff = WarmUp1.diff21(22);
-        boolean positiv = WarmUp1.posNeg(-5,-4,false);
+        boolean positiv = WarmUp1.posNeg(-5,-4,true);
         System.out.println(positiv);
 
     }

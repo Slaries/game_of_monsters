@@ -65,7 +65,7 @@ public class WarmUp1 {
 
     public static boolean posNeg(int a, int b, boolean negative) {
         boolean result = true;
-        if ((a < 0 && b < 0 && negative == true) || (((a > 0 && b < 0) || (a < 0 && b > 0)) && (negative != true))) {
+        if ((a < 0 && b < 0 && negative) || (((a > 0 && b < 0) || (a < 0 && b > 0)) && (negative != true))) {
             return result;
         } else {
             return result = false ;
