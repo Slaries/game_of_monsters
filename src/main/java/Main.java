@@ -10,7 +10,8 @@ public class Main {
         boolean make10 = WarmUp1.makes10(8, 2);
         int diff = WarmUp1.diff21(22);
         boolean positiv = WarmUp1.posNeg(-5,-4,true);
-        System.out.println(positiv);
+        String not = WarmUp1.notString("SEXY");
+        System.out.println(not);
 
     }
 }

@@ -72,6 +72,20 @@ public class WarmUp1 {
         }
     }
 
+    /* Given a string, return a new string where "not " has been added to the front.
+    * However, if the string already begins with "not", return the string unchanged.
+    * Note: use .equals() to compare 2 strings.
+     */
+    public static String notString(String str) {
+        int c = str.length();
+        String b = "not";
+        if (c >= 3 && str.substring(0, 3).equals(b)) {
+            return str;
+        }else{
+            return str = "not " + str;
+        }
+    }
+
 }
 
 
