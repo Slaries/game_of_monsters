@@ -11,7 +11,8 @@ public class Main {
         int diff = WarmUp1.diff21(22);
         boolean positiv = WarmUp1.posNeg(-5,-4,true);
         String not = WarmUp1.notString("SEXY");
-        System.out.println(not);
+        String withoutChar = WarmUp1.missingChar("sevastopol", 5);
+        System.out.println(withoutChar);
 
     }
 }
