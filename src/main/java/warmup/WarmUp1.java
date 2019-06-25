@@ -103,7 +103,7 @@ public class WarmUp1 {
    * frontBack("a") → "a"
    * frontBack("ab") → "ba"
    */
-    public String frontBack(String str) {
+    public static String frontBack(String str) {
         int a = str.length();
         if ( 2 <= a ){
             return (str.substring(a - 1)  + str.substring(1,a - 1)+ str.substring(0,1));
@@ -116,7 +116,7 @@ public class WarmUp1 {
     * If the string length is less than 3, the front is whatever is there.
     * Return a new string which is 3 copies of the front.
      */
-    public String front3(String str) {
+    public static String front3(String str) {
         int a = str.length();
         if (3 <= a){
             return (str.substring(0,3) + str.substring(0,3) + str.substring(0,3));
@@ -131,7 +131,7 @@ public class WarmUp1 {
     *backAround("Hello") → "oHelloo"
     *backAround("a") → "aaa"
      */
-    public String backAround(String str) {
+    public static String backAround(String str) {
         int a = str.length();
         if ( 1 < a ){
             return (str.substring(a - 1) + str  + str.substring(a - 1));
@@ -140,4 +140,13 @@ public class WarmUp1 {
         }
     }
 
+    /*
+    Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the % "mod" operator -- see Introduction to Mod
+    * or35(3) → true
+    * or35(10) → true
+    *  or35(8) → false
+     */
+    public static boolean or35(int n) {
+        return (( n % 3 <= 0) || ((n % 5)<= 0) );
+    }
 }
