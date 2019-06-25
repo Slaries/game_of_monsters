@@ -149,4 +149,18 @@ public class WarmUp1 {
     public static boolean or35(int n) {
         return (( n % 3 <= 0) || ((n % 5)<= 0) );
     }
+
+    /* Given a string, return true if the string starts with "hi" and false otherwise.
+   * startHi("hi there") → true
+   * startHi("hi") → true
+   * startHi("hello hi") → false
+     */
+    public static boolean startHi(String str) {
+        int a = str.length();
+        return ((a >= 2)&&("hi".equals(str.substring(0,2))));
+        }
+    }
+
+
+
 }
