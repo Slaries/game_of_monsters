@@ -98,5 +98,31 @@ public class WarmUp1 {
             return (str.substring(n));
         }
     }
+    /* Given a string, return a new string where the first and last chars have been exchanged.
+   * frontBack("code") → "eodc"
+   * frontBack("a") → "a"
+   * frontBack("ab") → "ba"
+   */
+    public String frontBack(String str) {
+        int a = str.length();
+        if ( 2 <= a ){
+            return (str.substring(a - 1)  + str.substring(1,a - 1)+ str.substring(0,1));
+        }else{
+            return str;
+        }
+    }
+
+    /* Given a string, we'll say that the front is the first 3 chars of the string.
+    * If the string length is less than 3, the front is whatever is there.
+    * Return a new string which is 3 copies of the front.
+     */
+    public String front3(String str) {
+        int a = str.length();
+        if (3 <= a){
+            return (str.substring(0,3) + str.substring(0,3) + str.substring(0,3));
+        }else{
+            return (str.substring(0,a) + str.substring(0,a) + str.substring(0,a));
+        }
+    }
 
 }
