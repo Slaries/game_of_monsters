@@ -169,8 +169,4 @@ public class WarmUp1 {
         return (temp1 > 100 && temp2 < 0) || (temp1 < 0 && temp2 > 100);
     }
 
-    /*
-    
-     */
-
 }
