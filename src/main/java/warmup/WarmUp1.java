@@ -72,6 +72,101 @@ public class WarmUp1 {
         }
     }
 
+    /* Given a string, return a new string where "not " has been added to the front.
+    * However, if the string already begins with "not", return the string unchanged.
+    * Note: use .equals() to compare 2 strings.
+     */
+    public static String notString(String str) {
+        int c = str.length();
+        String b = "not";
+        if (c >= 3 && str.substring(0, 3).equals(b)) {
+            return str;
+        }else{
+            return str = "not " + str;
+        }
+    }
+
+    /* Given a non-empty string and an int n, return a new string where the char at index n has been removed.
+    * The value of n will be a valid index of a char in the original string
+    * (i.e. n will be in the range 0..str.length()-1 inclusive).
+     */
+    public static String missingChar(String str, int n) {
+        int a = str.length();
+        if ( n < a ){
+            return (str.substring(0,n) + str.substring(n + 1));
+        }else{
+            return (str.substring(n));
+        }
+    }
+    /* Given a string, return a new string where the first and last chars have been exchanged.
+   * frontBack("code") → "eodc"
+   * frontBack("a") → "a"
+   * frontBack("ab") → "ba"
+   */
+    public static String frontBack(String str) {
+        int a = str.length();
+        if ( 2 <= a ){
+            return (str.substring(a - 1)  + str.substring(1,a - 1)+ str.substring(0,1));
+        }else{
+            return str;
+        }
+    }
+
+    /* Given a string, we'll say that the front is the first 3 chars of the string.
+    * If the string length is less than 3, the front is whatever is there.
+    * Return a new string which is 3 copies of the front.
+     */
+    public static String front3(String str) {
+        String result;
+        int a = str.length() ;
+        if (3 <= a){
+            result = str.substring(0,3);
+        }else{
+            result= str;
+        }
+        return (result + result + result);
+    }
+
+    /*Given a string, take the last char and return a new string with the last char added at the front and back, so "cat" yields "tcatt". The original string will be length 1 or more.
+
+    *backAround("cat") → "tcatt"
+    *backAround("Hello") → "oHelloo"
+    *backAround("a") → "aaa"
+     */
+    public static String backAround(String str) {
+        int a = str.length();
+        if ( 1 < a ){
+            return (str.substring(a - 1) + str  + str.substring(a - 1));
+        }else{
+            return str + str + str;
+        }
+    }
+
+    /*
+    Return true if the given non-negative number is a multiple of 3 or a multiple of 5. Use the % "mod" operator -- see Introduction to Mod
+    * or35(3) → true
+    * or35(10) → true
+    *  or35(8) → false
+     */
+    public static boolean or35(int n) {
+        return (( n % 3 <= 0) || ((n % 5)<= 0) );
+    }
+
+    /* Given a string, return true if the string starts with "hi" and false otherwise.
+   * startHi("hi there") → true
+   * startHi("hi") → true
+   * startHi("hello hi") → false
+     */
+    public static boolean startHi(String str) {
+        int a = str.length();
+        return ((a >= 2) && ("hi".equals(str.substring(0, 2))));
+    }
+
+    /* Given two temperatures, return true if one is less than 0 and the other is greater than 100.
+     */
+
+    public static boolean icyHot(int temp1, int temp2) {
+        return (temp1 > 100 && temp2 < 0) || (temp1 < 0 && temp2 > 100);
+    }
+
 }
-
-
