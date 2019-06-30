@@ -264,5 +264,24 @@ public class WarmUp1 {
         boolean outRange = (((40 <= a) && (a <= 50)) && (40 <= b) && (b <= 50));
         return inRange || outRange;
     }
+    /* Given 2 positive int values,
+    * return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
+     */
+    public static int max1020(int a, int b) {
+        boolean aInRange = ((a >= 10) && (a <= 20));
+        boolean bInRange = ((b >= 10) && (b <= 20));
+        int result = 0;
+        if  (!aInRange && !bInRange){
+            return result;
+        }
+        if  ((a < b) && !bInRange ){
+            return result = a;
+        }
+        if  ((a > b) && aInRange ){
+            return result = a;
+        } else{
+            return result = b;
+        }
+    }
 
 }
