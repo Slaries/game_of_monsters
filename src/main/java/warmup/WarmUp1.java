@@ -283,5 +283,16 @@ public class WarmUp1 {
             return result = b;
         }
     }
-
+    /* Given two non-negative int values, return true if they have the same last digit,
+    * such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+     */
+    public static boolean lastDigit(int a, int b) {
+        int aMod = a % 10;
+        int bMod = b % 10;
+        if (aMod == bMod){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
