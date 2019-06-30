@@ -239,4 +239,21 @@ public class WarmUp1 {
             return c;
         }
     }
+    /* Given 2 int values, return whichever value is nearest to the value 10,
+    * or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
+     */
+
+    public static int close10(int a, int b) {
+        int aValue = Math.abs(10 - a);
+        int bValue = Math.abs(10 - b);
+        int result;
+        if ((aValue == bValue) ||(a == b)){
+            return result = 0;
+        }
+        if ((aValue > bValue) && (aValue != bValue) ){
+            return result = b;
+        }else{
+            return result = a;
+        }
+    }
 }
