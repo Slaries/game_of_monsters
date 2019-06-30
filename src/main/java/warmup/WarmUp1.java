@@ -199,7 +199,7 @@ public class WarmUp1 {
     /*Given a string, if the string "del" appears starting at index 1,
     * return a string where that "del" has been deleted. Otherwise, return the string unchanged.
      */
-    public String delDel(String str) {
+    public static String delDel(String str) {
         int a = str.length();
         if ((a > 3) && "del".equals(str.substring(1,4)) ){
             return str.substring(0,1) + str.substring(4,a);
@@ -209,8 +209,21 @@ public class WarmUp1 {
     }
     /* Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
      */
-    public boolean mixStart(String str) {
+    public static boolean mixStart(String str) {
         return ((str.length() >= 3)&&("ix".equals(str.substring(1,3))));
     }
-
+    /* Given a string, return a string made of the first 2 chars (if present),
+    * however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
+     */
+    public static String startOz(String str) {
+        int a = str.length();
+        String result = "";
+        if (a >= 1 && str.charAt(0)=='o') {
+            result += str.charAt(0);
+        }
+        if (a >= 2 && str.charAt(1)=='z') {
+            result += str.charAt(1);
+        }
+        return result;
+    }
 }
