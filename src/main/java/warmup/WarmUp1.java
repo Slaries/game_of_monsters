@@ -186,4 +186,26 @@ public class WarmUp1 {
     /* We'll say that a number is "teen" if it is in the range 13..19 inclusive.
     * Given 2 int values, return true if one or the other is teen, but not both.
      */
+    public static boolean loneTeen(int a, int b) {
+
+        boolean aValue = (a >= 13 && a <= 19);
+        boolean bValue = (b >= 13 && b <= 19);
+        if (aValue != bValue){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    /*Given a string, if the string "del" appears starting at index 1,
+    * return a string where that "del" has been deleted. Otherwise, return the string unchanged.
+     */
+    public String delDel(String str) {
+        int a = str.length();
+        if ((a > 3) && "del".equals(str.substring(1,4)) ){
+            return str.substring(0,1) + str.substring(4,a);
+        }else{
+            return str;
+        }
+
+    }
 }
