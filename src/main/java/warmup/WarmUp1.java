@@ -190,7 +190,7 @@ public class WarmUp1 {
 
         boolean aValue = (a >= 13 && a <= 19);
         boolean bValue = (b >= 13 && b <= 19);
-        if (aValue != bValue){
+        if (aValue ^ bValue){
             return true;
         }else{
             return false;
