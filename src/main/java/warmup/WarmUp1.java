@@ -152,6 +152,18 @@ public class WarmUp1 {
         return (( n % 3 <= 0) || ((n % 5)<= 0) );
     }
 
+    /* Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back,
+    * so "kitten" yields"kikittenki". If the string length is less than 2, use whatever chars are there.
+     */
+    public static String front22(String str) {
+        int a = str.length();
+        if ( 2 <= a ){
+            return str.substring(0,2) + str + str.substring(0,2);
+        }else{
+            return str + str + str;
+        }
+    }
+
     /* Given a string, return true if the string starts with "hi" and false otherwise.
    * startHi("hi there") → true
    * startHi("hi") → true
