@@ -203,8 +203,8 @@ public class WarmUp1 {
         int a = str.length();
         if ((a > 3) && "del".equals(str.substring(1,4)) ){
             return str.substring(0,1) + str.substring(4,a);
-        }else{
-            return str;
+        }
+        return str;
         }
     }
     /* Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
