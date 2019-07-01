@@ -306,7 +306,7 @@ Return true if the given string contains between 1 and 3 'e' chars.
 * If the string has less than 3 chars, uppercase whatever is there.
 * Note that str.toUpperCase() returns the uppercase version of a string.
 */
-public static String endUp(String str) {
+    public static String endUp(String str) {
     int a = str.length();
     if (a > 3){
         return str.substring(0,a-3) + str.substring(a-3,a).toUpperCase();
@@ -314,8 +314,17 @@ public static String endUp(String str) {
         return str.toUpperCase();
     }
 }
-/*
-
+/* Given a non-empty string and an int N,
+* return the string made starting with char 0, and then every Nth char of the string.
+* So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
  */
+    public static String everyNth(String str, int n) {
+    String result = "";
+    int a = str.length();
+    for (int i = 0; i < a; i += n){
+        result += str.charAt(i);
+    }
+    return result;
+}
 
 }
