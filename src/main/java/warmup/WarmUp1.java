@@ -199,14 +199,7 @@ public class WarmUp1 {
     * Given 2 int values, return true if one or the other is teen, but not both.
      */
     public static boolean loneTeen(int a, int b) {
-
-        boolean aValue = (a >= 13 && a <= 19);
-        boolean bValue = (b >= 13 && b <= 19);
-        if (aValue ^ bValue){
-            return true;
-        }else{
-            return false;
-        }
+        return (a >= 13 && a <= 19) ^ (b >= 13 && b <= 19);
     }
     /*Given a string, if the string "del" appears starting at index 1,
     * return a string where that "del" has been deleted. Otherwise, return the string unchanged.
