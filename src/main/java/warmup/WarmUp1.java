@@ -152,6 +152,18 @@ public class WarmUp1 {
         return (( n % 3 <= 0) || ((n % 5)<= 0) );
     }
 
+    /* Given a string, take the first 2 chars and return the string with the 2 chars added at both the front and back,
+    * so "kitten" yields"kikittenki". If the string length is less than 2, use whatever chars are there.
+     */
+    public static String front22(String str) {
+        int a = str.length();
+        if ( 2 <= a ){
+            return str.substring(0,2) + str + str.substring(0,2);
+        }else{
+            return str + str + str;
+        }
+    }
+
     /* Given a string, return true if the string starts with "hi" and false otherwise.
    * startHi("hi there") → true
    * startHi("hi") → true
@@ -168,5 +180,155 @@ public class WarmUp1 {
     public static boolean icyHot(int temp1, int temp2) {
         return (temp1 > 100 && temp2 < 0) || (temp1 < 0 && temp2 > 100);
     }
+
+    /* Given 2 int values, return true if either of them is in the range 10..20 inclusive.
+     */
+    public static boolean in1020(int a, int b) {
+        return (a <= 20 && a >= 10) || (b <= 20 && b >= 10);
+    }
+
+    /*We'll say that a number is "teen" if it is in the range 13..19 inclusive.
+    * Given 3 int values, return true if 1 or more of them are teen.
+     */
+    public static boolean hasTeen(int a, int b, int c) {
+
+        return ((a >= 13 && a<= 19) || (b >= 13 && b<= 19) || (c >= 13 && c<= 19));
+    }
+
+    /* We'll say that a number is "teen" if it is in the range 13..19 inclusive.
+    * Given 2 int values, return true if one or the other is teen, but not both.
+     */
+    public static boolean loneTeen(int a, int b) {
+        return (a >= 13 && a <= 19) ^ (b >= 13 && b <= 19);
+    }
+    /*Given a string, if the string "del" appears starting at index 1,
+    * return a string where that "del" has been deleted. Otherwise, return the string unchanged.
+     */
+    public static String delDel(String str) {
+        int a = str.length();
+        if ((a > 3) && "del".equals(str.substring(1,4)) ){
+            return str.substring(0,1) + str.substring(4,a);
+        }
+        return str;
+        }
+    }
+    /* Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
+     */
+    public static boolean mixStart(String str) {
+        return ((str.length() >= 3)&&("ix".equals(str.substring(1,3))));
+    }
+    /* Given a string, return a string made of the first 2 chars (if present),
+    * however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
+     */
+    public static String startOz(String str) {
+        int a = str.length();
+        String result = "";
+        if (a >= 1 && str.charAt(0)=='o') {
+            result += str.charAt(0);
+        }
+        if (a >= 2 && str.charAt(1)=='z') {
+            result += str.charAt(1);
+        }
+        return result;
+    }
+    /* Given three int values, a b c, return the largest.
+     */
+    public static int intMax(int a, int b, int c) {
+        if ((a > b) && (a > c)){
+            return a;
+        }
+        if ((b > a) && (b > c)){
+            return b;
+        }
+        return c;
+    }
+    /* Given 2 int values, return whichever value is nearest to the value 10,
+    * or return 0 in the event of a tie. Note that Math.abs(n) returns the absolute value of a number.
+     */
+
+    public static int close10(int a, int b) {
+        int aValue = Math.abs(10 - a);
+        int bValue = Math.abs(10 - b);
+        int result;
+        if ((aValue == bValue) ||(a == b)){
+            return result = 0;
+        }
+        if ((aValue > bValue) && (aValue != bValue) ){
+            return result = b;
+        }else{
+            return result = a;
+        }
+    }
+    /* Given 2 int values,
+    return true if they are both in the range 30..40 inclusive, or they are both in the range 40..50 inclusive.
+     */
+    public static boolean in3050(int a, int b) {
+        boolean inRange = (((30 <= a) && (a <= 40)) && (30 <= b) && (b <= 40));
+        boolean outRange = (((40 <= a) && (a <= 50)) && (40 <= b) && (b <= 50));
+        return inRange || outRange;
+    }
+    /* Given 2 positive int values,
+    * return the larger value that is in the range 10..20 inclusive, or return 0 if neither is in that range.
+     */
+    public static int max1020(int a, int b) {
+        boolean aInRange = ((a >= 10) && (a <= 20));
+        boolean bInRange = ((b >= 10) && (b <= 20));
+        int result = 0;
+        if  (!aInRange && !bInRange){
+            return result;
+        }
+        if  ((a < b) && !bInRange ){
+            return result = a;
+        }
+        if  ((a > b) && aInRange ){
+            return result = a;
+        } else{
+            return result = b;
+        }
+    }
+    /* Given two non-negative int values, return true if they have the same last digit,
+    * such as with 27 and 57. Note that the % "mod" operator computes remainders, so 17 % 10 is 7.
+     */
+    public static boolean lastDigit(int a, int b) {
+        return a % 10 == b % 10;
+    }
+/*
+Return true if the given string contains between 1 and 3 'e' chars.
+ */
+    public static boolean stringE(String str) {
+    int a = str.length();
+    int counter = 0;
+    for (int i = 0; i<a; i++){
+        if (str.charAt(i)=='e'){
+            counter++;
+        }
+    }
+    return counter == 1 || counter == 3 ;
+}
+
+/* Given a string, return a new string where the last 3 chars are now in upper case.
+* If the string has less than 3 chars, uppercase whatever is there.
+* Note that str.toUpperCase() returns the uppercase version of a string.
+*/
+    public static String endUp(String str) {
+    int a = str.length();
+    if (a > 3){
+        return str.substring(0,a-3) + str.substring(a-3,a).toUpperCase();
+    }else{
+        return str.toUpperCase();
+    }
+}
+/* Given a non-empty string and an int N,
+* return the string made starting with char 0, and then every Nth char of the string.
+* So if N is 3, use char 0, 3, 6, ... and so on. N is 1 or more.
+ */
+    public String everyNth(String str, int n) {
+    StringBuilder temp = new StringBuilder("");
+    int a = str.length();
+    for (int i = 0; i < a; i += n){
+        temp.append(str.charAt(i));
+    }
+    return temp.toString();
+}
 
 }
