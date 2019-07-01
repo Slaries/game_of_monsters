@@ -288,5 +288,22 @@ public class WarmUp1 {
     public static boolean lastDigit(int a, int b) {
         return a % 10 == b % 10;
     }
+/*
+Return true if the given string contains between 1 and 3 'e' chars.
+ */
+    public static boolean stringE(String str) {
+    int a = str.length();
+    int counter = 0;
+    for (int i = 0; i<a; i++){
+        if (str.charAt(i)=='e'){
+            counter++;
+        }
+    }
+    return counter == 1 || counter == 3 ;
+}
+
+/*
+
+ */
 
 }
