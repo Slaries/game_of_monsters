@@ -44,14 +44,13 @@ public class WarmUp2 {
      */
 
     boolean doubleX(String str) {
-        int i = str.length();
-        char x = 'x';
-        boolean result = false;
-        int xIndex = str.indexOf('x');
-        if ( i >= 2 && (i-1) > xIndex && (x == str.charAt(xIndex + 1))){
-            result = true;
-        }
-        return result;
+        int length = str.length();
+        if (length < 2)
+            return false;
+        int index = str.indexOf('x');
+        if (index + 1 >= length)
+            return false;
+        return str.charAt(index + 1) == 'x';
     }
 
     /* Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
