@@ -46,5 +46,14 @@ public class WarmUp2 {
 
         return (str.length() >= 2) && ((str.length()-1) > str.indexOf('x')) && ('x' == str.charAt(str.indexOf('x') + 1)); //
     }
-
+    /* Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
+     */
+    public static String stringBits(String str) {
+        StringBuilder temp = new StringBuilder("");
+        int a = str.length();
+        for (int i = 0; i<a && a >= 2; i += 2){
+            temp.append (str.charAt(i));
+        }
+        return temp.toString();
+    }
 }
