@@ -27,5 +27,17 @@ public class WarmUp2 {
         }
         return temp.toString();
     }
-
+    /* Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
+     */
+    int countXX(String str) {
+        int a = str.length();
+        int count = 0;
+        char x = 'x';
+        for (int i = 0; i < (a-1); i++){
+            if ((str.charAt(i) == x) && (str.charAt(i+1) == x)){
+                count += 1;
+            }
+        }
+        return count;
+    }
 }
