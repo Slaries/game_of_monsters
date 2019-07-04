@@ -42,10 +42,17 @@ public class WarmUp2 {
     }
     /* Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
      */
-    boolean doubleX(String str) {
 
-        return (str.length() >= 2) && ((str.length()-1) > str.indexOf('x')) && ('x' == str.charAt(str.indexOf('x') + 1)); //
+    boolean doubleX(String str) {
+        int length = str.length();
+        if (length < 2)
+            return false;
+        int index = str.indexOf('x');
+        if (index + 1 >= length)
+            return false;
+        return str.charAt(index + 1) == 'x';
     }
+
     /* Given a string, return a new string made of every other char starting with the first, so "Hello" yields "Hlo".
      */
     public static String stringBits(String str) {
