@@ -56,4 +56,17 @@ public class WarmUp2 {
         }
         return temp.toString();
     }
+    /* Given a non-empty string like "Code" return a string like "CCoCodCode".
+     */
+    public String stringSplosion(String str) {
+        String temp = "";
+        int j = str.length();
+        if (j < 2 )
+            return temp = str;
+
+        for(int i =  0; i < j;i++){
+            temp = str.substring(0,j-i) + temp;
+        }
+        return temp;
+    }
 }
