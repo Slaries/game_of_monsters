@@ -58,7 +58,7 @@ public class WarmUp2 {
     public static String stringBits(String str) {
         StringBuilder temp = new StringBuilder("");
         int a = str.length();
-        for (int i = 0; i<a && a >= 2; i += 2){
+        for (int i = 0; i < a && a >= 2; i += 2){
             temp.append (str.charAt(i));
         }
         return temp.toString();
@@ -67,21 +67,21 @@ public class WarmUp2 {
      */
     public static String stringSplosion(String str) {
         String temp = "";
-        int j = str.length();
-        if (j < 2 )
+        int length = str.length();
+        if (length < 2 )
             return temp = str;
 
-        for(int i =  0; i < j;i++){
-            temp = str.substring(0,j-i) + temp;
+        for(int i =  0; i < length;i++){
+            temp = str.substring(0,length - i) + temp;
         }
         return temp;
     }
     /* Given an array of ints, return the number of 9's in the array.
      */
     public static int arrayCount9(int[] nums) {
-        int j = nums.length;
+        int length = nums.length;
         int count = 0;
-        for (int i = 0; i < j;i++){
+        for (int i = 0; i < length;i++){
             if (nums[i] == 9)
                 count++;
         }
@@ -92,8 +92,8 @@ public class WarmUp2 {
      */
     public boolean arrayFront9(int[] nums) {
         boolean result = false;
-        for (int i = 0; i < nums.length;i++){
-            if (nums[i] == 9 && i < 3)
+        for (int i = 0; i < nums.length && i < 3;i++){
+            if (nums[i] == 9)
                 result = true;
         }
         return result;
