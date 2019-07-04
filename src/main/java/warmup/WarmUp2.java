@@ -58,7 +58,7 @@ public class WarmUp2 {
     }
     /* Given a non-empty string like "Code" return a string like "CCoCodCode".
      */
-    public String stringSplosion(String str) {
+    public static String stringSplosion(String str) {
         String temp = "";
         int j = str.length();
         if (j < 2 )
@@ -68,5 +68,16 @@ public class WarmUp2 {
             temp = str.substring(0,j-i) + temp;
         }
         return temp;
+    }
+    /* Given an array of ints, return the number of 9's in the array.
+     */
+    public static int arrayCount9(int[] nums) {
+        int j = nums.length;
+        int count = 0;
+        for (int i = 0; i < j;i++){
+            if (nums[i] == 9)
+                count++;
+        }
+        return count;
     }
 }
