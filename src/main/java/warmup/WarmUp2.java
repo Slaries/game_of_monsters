@@ -146,4 +146,59 @@ public class WarmUp2 {
         }
         return newStr;
     }
+    /* Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
+     */
+    public static String altPairs(String str) {
+        int length = str.length();
+        String temp = "";
+        for(int i = 0; i < length; i += 4){
+            temp +=str.charAt(i);
+            if (i + 1 < length)
+                temp += str.charAt(i+1);
+        }
+        return temp;
+    }
+    /* Suppose the string "yak" is unlucky. Given a string, return a version where all the "yak" are removed,
+    * but the "a" can be any char. The "yak" strings will not overlap.
+     */
+    public static String stringYak(String str) {
+        return str.replaceAll("yak","");
+    }
+    /* Given an array of ints, return the number of times that two 6's are next to each other in the array.
+     * Also count instances where the second "6" is actually a 7.
+     */
+    public static int array667(int[] nums) {
+        int length = nums.length;
+        int count = 0;
+        for(int i = 0; i < length - 1;i++){
+            if (nums[i] == 6 && (nums[i+1] ==6 || nums[i+1] == 7) )
+                count++;
+        }
+        return count;
+    }
+    /*Given an array of ints, we'll say that a triple is a value appearing 3 times in a row in the array.
+    * Return true if the array does not contain any triples.
+     */
+    public static boolean noTriples(int[] nums) {
+        int length = nums.length;
+        for(int i = 0; i < length - 2; i++){
+            if (nums[i] == nums[i + 1] && nums[i] == nums[i + 2])
+                return false;
+        }
+        return true;
+    }
+    /* Given an array of ints, return true if it contains a 2, 7, 1 pattern: a value, followed by the value plus 5,
+     * followed by the value minus 1. Additionally the 271 counts even if the "1" differs by 2 or less from the correct value.
+     */
+    public static boolean has271(int[] nums) {
+        int length = nums.length;
+        for(int i = 0; i < length - 2;i++ ){
+            int aDiffers = nums[i + 1] - nums[i]; // 1 differs
+            int bDiffers = nums[i + 2] - nums[i]; //2 differs
+
+            if (aDiffers == 5 && bDiffers <= 1 && bDiffers >= -3)
+                return true;
+        }
+        return false;
+    }
 }
