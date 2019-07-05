@@ -98,4 +98,52 @@ public class WarmUp2 {
         }
         return result;
     }
+    /* Given an array of ints, return true if the sequence of numbers 1, 2, 3 appears in the array somewhere.
+     */
+    public static boolean array123(int[] nums) {
+        int length = nums.length;
+        boolean numbers = false;
+        if (length < 2)
+            return false;
+        for(int i = 0; i < length - 2;i++){
+            if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3)
+                return true;
+        }
+        return false;
+    }
+    /*  Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
+    * So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
+     */
+    public static int stringMatch(String a, String b) {
+        int aLength = a.length();
+        int bLength = b.length();
+        int count = 0;
+        if (aLength < 2 || bLength < 2)
+            return count;
+
+        for(int i = 0; i < aLength - 1 && i < bLength - 1;i++){
+            if (a.substring(i,i + 2).equals(b.substring(i, i + 2)))
+                count++;
+        }
+        return count;
+    }
+
+    /* Given a string, return a version where all the "x" have been removed.
+    * Except an "x" at the very start or end should not be removed.
+     */
+    public static String stringX(String str) {
+        int length = str.length();
+        String newStr = "";
+        if (length < 3)
+            return str;
+        for (int i = 0; i < length;i++){
+            if (str.charAt(i) != 'x'){
+                newStr += str.charAt(i);
+            }else{
+                if (i == 0 || i == length - 1)
+                    newStr += str.charAt(i);
+            }
+        }
+        return newStr;
+    }
 }
