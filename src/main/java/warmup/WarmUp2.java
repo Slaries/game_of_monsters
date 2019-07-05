@@ -187,4 +187,18 @@ public class WarmUp2 {
         }
         return true;
     }
+    /* Given an array of ints, return true if it contains a 2, 7, 1 pattern: a value, followed by the value plus 5,
+     * followed by the value minus 1. Additionally the 271 counts even if the "1" differs by 2 or less from the correct value.
+     */
+    public static boolean has271(int[] nums) {
+        int length = nums.length;
+        for(int i = 0; i < length - 2;i++ ){
+            int aDiffers = nums[i + 1] - nums[i]; // 1 differs
+            int bDiffers = nums[i + 2] - nums[i]; //2 differs
+
+            if (aDiffers == 5 && bDiffers <= 1 && bDiffers >= -3)
+                return true;
+        }
+        return false;
+    }
 }
