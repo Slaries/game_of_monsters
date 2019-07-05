@@ -146,4 +146,16 @@ public class WarmUp2 {
         }
         return newStr;
     }
+    /* Given a string, return a string made of the chars at indexes 0,1, 4,5, 8,9 ... so "kittens" yields "kien".
+     */
+    public static String altPairs(String str) {
+        int length = str.length();
+        String temp = "";
+        for(int i = 0; i < length; i += 4){
+            temp +=str.charAt(i);
+            if (i + 1 < length)
+                temp += str.charAt(i+1);
+        }
+        return temp;
+    }
 }
