@@ -128,4 +128,22 @@ public class WarmUp2 {
         return count;
     }
 
+    /* Given a string, return a version where all the "x" have been removed.
+    * Except an "x" at the very start or end should not be removed.
+     */
+    public static String stringX(String str) {
+        int length = str.length();
+        String newStr = "";
+        if (length < 3)
+            return str;
+        for (int i = 0; i < length;i++){
+            if (str.charAt(i) != 'x'){
+                newStr += str.charAt(i);
+            }else{
+                if (i == 0 || i == length - 1)
+                    newStr += str.charAt(i);
+            }
+        }
+        return newStr;
+    }
 }
