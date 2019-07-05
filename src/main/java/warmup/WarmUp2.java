@@ -111,8 +111,21 @@ public class WarmUp2 {
         }
         return numbers;
     }
-    /*
-
+    /*  Given 2 strings, a and b, return the number of the positions where they contain the same length 2 substring.
+    * So "xxcaazz" and "xxbaaz" yields 3, since the "xx", "aa", and "az" substrings appear in the same place in both strings.
      */
+    public static int stringMatch(String a, String b) {
+        int aLength = a.length();
+        int bLength = b.length();
+        int count = 0;
+        if (aLength < 2 || bLength < 2)
+            return count;
+
+        for(int i = 0; i < aLength - 1 && i < bLength - 1;i++){
+            if (a.substring(i,i + 2).equals(b.substring(i, i + 2)))
+                count++;
+        }
+        return count;
+    }
 
 }
