@@ -1,9 +1,9 @@
 package warmup;
 
 public class WarmUp2 {
+
     /*Given a string and a non-negative int n, return a larger string that is n copies of the original string.
      */
-
     public static String stringTimes(String str, int n) {
         StringBuilder temp = new StringBuilder("");
         for (int i = 0; i < n; i++){
@@ -29,7 +29,7 @@ public class WarmUp2 {
     }
     /* Count the number of "xx" in the given string. We'll say that overlapping is allowed, so "xxx" contains 2 "xx".
      */
-    int countXX(String str) {
+   public static int countXX(String str) {
         int a = str.length();
         int count = 0;
         char x = 'x';
@@ -43,7 +43,7 @@ public class WarmUp2 {
     /* Given a string, return true if the first instance of "x" in the string is immediately followed by another "x".
      */
 
-    boolean doubleX(String str) {
+    public static boolean doubleX(String str) {
         int length = str.length();
         if (length < 2)
             return false;
@@ -90,7 +90,7 @@ public class WarmUp2 {
     /* Given an array of ints, return true if one of the first 4 elements in the array is a 9.
     * The array length may be less than 4.
      */
-    public boolean arrayFront9(int[] nums) {
+    public static boolean arrayFront9(int[] nums) {
         boolean result = false;
         for (int i = 0; i < nums.length && i < 3;i++){
             if (nums[i] == 9)

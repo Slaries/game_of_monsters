@@ -211,12 +211,13 @@ public class WarmUp1 {
         }
         return str;
         }
-    }
+
     /* Return true if the given string begins with "mix", except the 'm' can be anything, so "pix", "9ix" .. all count.
      */
     public static boolean mixStart(String str) {
-        return ((str.length() >= 3)&&("ix".equals(str.substring(1,3))));
+        return (str.length() >= 3) && ("ix".equals(str.substring(1, 3)));
     }
+
     /* Given a string, return a string made of the first 2 chars (if present),
     * however include first char only if it is 'o' and include the second only if it is 'z', so "ozymandias" yields "oz".
      */
