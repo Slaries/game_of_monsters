@@ -15,19 +15,19 @@ public class WarmUp2Test {
         int expected = 1;
 
         int actual = WarmUp2.countXX(sourse);
-        System.out.println(actual);
         assertEquals(expected,actual);
     }
 
     @Test
     public void has271Test(){
         // given
-        int[] source = {2,7,6,0,10};
+        int[] source = {2,7,1,0,10};
         // when
 
         //then
         boolean expected = true;
-        assertEquals(expected, WarmUp2.has271(source));
+        boolean actual = WarmUp2.has271(source);
+        assertEquals(expected, actual);
     }
     @Test
     public void stringMatchTest(){
@@ -38,9 +38,7 @@ public class WarmUp2Test {
 
         //then
         int expected = 3;
-        assertEquals(expected, WarmUp2.stringMatch(aSource,bSource));
+        int actual = WarmUp2.stringMatch(aSource,bSource);
+        assertEquals(expected,actual);
     }
-
-
-
 }
