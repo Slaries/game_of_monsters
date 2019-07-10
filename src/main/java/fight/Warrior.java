@@ -27,7 +27,7 @@ public class Warrior {
         return health;
     }
 
-    public int attack(Monster monster){
+    public void attack(Monster monster){
         Random rnd = new Random(System.currentTimeMillis());
         int min = 10;
         int max = 30;
