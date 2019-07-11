@@ -39,7 +39,7 @@ public class Warrior {
             monster.setHealth( monster.getHealth() - damage);
             System.out.println(this.name + " нанес " + monster.getName() + " " + damage + " урона, жизни осталось " + monster.getHealth());
         }else
-            System.out.println(monster.getName() + " победил! "+ this.name + " погиб в не равном бою");
+            System.out.println(monster.getName() + " победил!!! "+ this.name + " погиб в не равном бою");
 
     }
 
