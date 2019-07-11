@@ -28,12 +28,19 @@ public class Warrior {
     }
 
     public void attack(Monster monster){
-        Random rnd = new Random(System.currentTimeMillis());
-        int min = 10;
-        int max = 30;
-        int damage = min + rnd.nextInt(max - min + 1);
-        monster.setHealth( monster.getHealth() - damage);
-        System.out.println(this.name + " нанес " + monster.getName() + " " + damage + " урона");
+
+        if(this.health > 0){
+            Random rnd = new Random(System.currentTimeMillis());
+            int min = 10;
+            int max = 30;
+            int damage = min + rnd.nextInt(max - min + 1); // create damage
+            if(monster.getHealth() <= damage){
+            damage = monster.getHealth();}
+            monster.setHealth( monster.getHealth() - damage);
+            System.out.println(this.name + " нанес " + monster.getName() + " " + damage + " урона, жизни осталось " + monster.getHealth());
+        }else
+            System.out.println(monster.getName() + " победил. "+ this.name + " погиб в не равном бою");
+
     }
 
 }

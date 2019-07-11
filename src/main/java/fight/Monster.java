@@ -3,8 +3,8 @@ package fight;
 import java.util.Random;
 
 public class Monster {
-    String name;
-    int health;
+   private String name;
+   private int health;
 
     public Monster(String name, int health) {
         this.name = name;
@@ -28,11 +28,17 @@ public class Monster {
     }
 
     public void attack(Warrior warrior) {
-        Random rnd = new Random(System.currentTimeMillis());
-        int min = 10;
-        int max = 30;
-        int damage = min + rnd.nextInt(max - min + 1);
-        warrior.setHealth(warrior.getHealth() - damage);
-        System.out.println(this.name + " нанес " + warrior.getName() + " " + damage + " урона");
+        if(this.health > 0) {
+            Random rnd = new Random(System.currentTimeMillis());
+            int min = 10;
+            int max = 30;
+            int damage = min + rnd.nextInt(max - min + 1);
+            if(warrior.getHealth() <= damage){
+                damage = warrior.getHealth();}
+            warrior.setHealth(warrior.getHealth() - damage);
+            System.out.println(this.name + " нанес " + warrior.getName() + " " + damage + " урона, жизни осталось " + warrior.getHealth());
+        }else
+            System.out.println(warrior.getName() + " победил. "+ this.name + " погиб в бою");
+
     }
 }
