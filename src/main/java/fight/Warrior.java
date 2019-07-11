@@ -40,7 +40,6 @@ public class Warrior {
             System.out.println(this.name + " нанес " + monster.getName() + " " + damage + " урона, жизни осталось " + monster.getHealth());
         }else
             System.out.println(monster.getName() + " победил!!! "+ this.name + " погиб в не равном бою");
-
     }
 
 }
