@@ -13,6 +13,7 @@ public class War {
         {}
         do {
             outputMessageAboutDamage(warrior.getName(), monster.getName(), warrior.attack(monster));
+            if (monster.getHealth() > 0)
             outputMessageAboutDamage( monster.getName(), warrior.getName(), monster.attack(warrior));
 
         } while (warrior.getHealth() > 0 && monster.getHealth() > 0);
