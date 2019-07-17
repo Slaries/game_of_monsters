@@ -15,17 +15,19 @@ public class Battle {
         }
         catch(Exception e)
         {}
-        do {
+        while (warrior.getHealth() > 0 && monster.getHealth() > 0) {
             System.out.println("нажмите А для атаки");
             if ("A".equals(readFromScanner.next()))
                 outputMessageAboutDamage(warrior.getName(), monster.getName(), warrior.attack(monster));
             if (monster.getHealth() > 0)
                     outputMessageAboutDamage(monster.getName(), warrior.getName(), monster.attack(warrior));
-        } while (warrior.getHealth() > 0 && monster.getHealth() > 0);
-        if (warrior.getHealth() == 0)
-            System.out.printf( "%s  победил!!! %s погиб в неравном бою \n" , monster.getName(),warrior.getName());
-        else
-            System.out.printf( "%s  победил!!! %s погиб в неравном бою \n", warrior.getName(),monster.getName());
+            if (warrior.getHealth() == 0)
+                System.out.printf( "%s  победил!!! %s погиб в неравном бою \n" , monster.getName(),warrior.getName());
+            if (monster.getHealth() == 0)
+                System.out.printf( "%s  победил!!! %s погиб в неравном бою \n", warrior.getName(),monster.getName());
+        }
+        if (monster.getHealth() == 0 && warrior.getHealth() == 0)
+            System.out.println( "Никто не победил!!! задано мало очков здоровья");
         System.out.println("Game Over!");
     }
     public static void outputMessageAboutDamage(String attackName,String defenseName, int damage ){
