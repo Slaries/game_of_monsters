@@ -17,16 +17,10 @@ public class Battle {
         {}
         do {
             System.out.println("нажмите А для атаки");
-            if ("A".equals(readFromScanner.next())) {
+            if ("A".equals(readFromScanner.next()))
                 outputMessageAboutDamage(warrior.getName(), monster.getName(), warrior.attack(monster));
-                if (monster.getHealth() > 0)
+            if (monster.getHealth() > 0)
                     outputMessageAboutDamage(monster.getName(), warrior.getName(), monster.attack(warrior));
-            }
-            else {
-                if (monster.getHealth() > 0)
-                    outputMessageAboutDamage(monster.getName(), warrior.getName(), monster.attack(warrior));
-            }
-
         } while (warrior.getHealth() > 0 && monster.getHealth() > 0);
         if (warrior.getHealth() == 0)
             System.out.printf( "%s  победил!!! %s погиб в неравном бою \n" , monster.getName(),warrior.getName());
