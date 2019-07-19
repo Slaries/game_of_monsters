@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Battle {
     public static void startBattle() {
-        Warrior warrior = new Warrior("Hulk", 100); //  create my doldoebiki
-        Monster monster = new Monster("Tanos", 100);
+        Attackable warrior = new Warrior("Hulk", 100); //  create my doldoebiki
+        Attackable monster = new Monster("Tanos", 100);
             System.out.println("This war it's best of all, that can you see!");
             System.out.println("Press any key to start game ! ");
         Scanner readFromScanner = new Scanner(System.in);
