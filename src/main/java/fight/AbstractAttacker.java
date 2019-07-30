@@ -4,6 +4,16 @@ import java.util.Random;
 
 public abstract class AbstractAttacker implements Attackable {
 
+    private String name;
+    private int health;
+
+    public AbstractAttacker(){}
+
+    public AbstractAttacker(String name, int health) {
+        this.name = name;
+        this.health = health;
+    }
+
     /*
     * TODO:
     *  1. Добавить отступы между методами и полями. Неудобно читать.
@@ -14,40 +24,38 @@ public abstract class AbstractAttacker implements Attackable {
     *     Очевидно, это неправильно, это же нестатический метод.
     *
     * */
-     private String name;
-     private int health;
-    public AbstractAttacker(String name, int health) {
-        this.name = name;
-        this.health = health;
-    }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
-    public String getName() {
+      public String getName() {
+
         return name;
     }
 
     public void setHealth(int health) {
+
         this.health = health;
     }
 
     public int getHealth() {
+
         return health;
     }
 
-    public int attack(AbstractAttacker) {
+    public int attack(Attackable attackable) {
         int damage = 0;
         if (this.health > 0) {
             Random rnd = new Random(System.currentTimeMillis());
             int min = 10;
             int max = 30;
             damage = min + rnd.nextInt(max - min + 1);
-            if (AbstractAttacker.getHealth() <= damage) {
-                damage = AbstractAttacker.getHealth();
+            if (attackable.getHealth() <= damage) {
+                damage = attackable.getHealth();
             }
-            AbstractAttacker.setHealth(AbstractAttacker.getHealth() - damage);
+            attackable.setHealth(attackable.getHealth() - damage);
         } return damage;
     }
 

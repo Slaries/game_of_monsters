@@ -1,16 +1,9 @@
 package fight;
 
 public class Warrior extends AbstractAttacker {
+    public Warrior(){}
 
-    /*
-     * TODO:
-     *  1. Добавь сюда конструктор с полями, вызывающий конструктор родительского класса
-     *  2. Добавь сюда пустой конструктор.
-     *  3. Убери отсюда этот метод.
-     *
-     * */
-
-    public int attack() {
-        return 0;
+    public Warrior(String name, int health) {
+        super(name, health);
     }
 }
