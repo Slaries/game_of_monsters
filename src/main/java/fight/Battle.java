@@ -1,5 +1,8 @@
 package fight;
 
+import entity.Monster;
+import entity.Warrior;
+
 import java.util.Scanner;
 
 public class Battle {
@@ -19,10 +22,9 @@ public class Battle {
 
         while (warrior.getHealth() > 0 && monster.getHealth() > 0) {
             System.out.println("нажмите А для атаки");
-            if ("A".equals(readFromScanner.next()))
-                outputMessageAboutDamage(warrior.getName(), monster.getName(), warrior.attack(monster));
+                outputMessageAboutDamage(warrior.getName(), monster.getName(), warrior.attack(monster,readFromScanner.next()));
             if (monster.getHealth() > 0)
-                    outputMessageAboutDamage(monster.getName(), warrior.getName(), monster.attack(warrior));
+                    outputMessageAboutDamage(monster.getName(), warrior.getName(), monster.attack(warrior,"a"));
             if (warrior.getHealth() == 0)
                 System.out.printf( "%s  победил!!! %s погиб в неравном бою \n" , monster.getName(),warrior.getName());
             if (monster.getHealth() == 0)
